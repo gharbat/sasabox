@@ -1,10 +1,11 @@
 let slides = document.querySelectorAll(".slide-item");
-let [arrow_right, arrow_left] = document.querySelectorAll(".arrow");
+let img = document.querySelectorAll("img");
+// let [arrow_right, arrow_left] = document.querySelectorAll(".arrow");
 
 
 
 let counter = 0;
-let changeSlider = function () {
+let changeSlider = function (slides) {
     if (counter !== slides.length-1) {
         slides[counter].style.display = "none";
         slides[counter + 1].style.display = "block";
@@ -17,4 +18,5 @@ let changeSlider = function () {
 }
 
 
-setInterval(changeSlider, 1000)
+setInterval(changeSlider(slides), 1000);
+setInterval(changeSlider(img), 1000);
