@@ -5,18 +5,18 @@ let img = document.querySelectorAll("img");
 
 
 let counter = 0;
-let changeSlider = function (slides) {
-    if (counter !== slides.length-1) {
-        slides[counter].style.display = "none";
-        slides[counter + 1].style.display = "block";
-        counter++;
-    }else {
-        slides[counter].style.display = "none";
-        slides[0].style.display = "block";
-        counter = 0;
-    }
+slide(slides);
+
+function slide(slides) {
+    setInterval(function() {
+        if (counter !== slides.length - 1) {
+            slides[counter].style.display = "none";
+            slides[counter + 1].style.display = "block";
+            counter++;
+        } else {
+            slides[counter].style.display = "none";
+            slides[0].style.display = "block";
+            counter = 0;
+        }
+    }, 1000);
 }
-
-
-setInterval(changeSlider(slides), 1000);
-setInterval(changeSlider(img), 1000);
